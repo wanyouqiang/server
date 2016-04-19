@@ -83,7 +83,7 @@
 			<div class="nav nav-pills nav-stacked text-center">
 			<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=75658328f3956861f5fb6bfc43b75c27&action=category&catid=13&num=10&siteid=%24siteid&order=listorder+ASC\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'category')) {$data = $content_tag->category(array('catid'=>'13','siteid'=>$siteid,'order'=>'listorder ASC','limit'=>'10',));}?>
 		      <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
-				<li role="presentation" style="background-color:rgb(230,0,18);"><a href="<?php echo $r['url'];?>" style="color:white"><?php echo $r['catname'];?></a></li>
+				<li role="presentation" style="background-color:#BA0C2F;"><a href="<?php echo $r['url'];?>" style="color:white"><?php echo $r['catname'];?></a></li>
 			  <?php $n++;}unset($n); ?>	
 			<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
 			</div>
@@ -94,7 +94,7 @@
 			 <a href="<?php echo $r['url'];?>">
 			<div class="col-xs-6">
 				<img class="thumbnail" src="<?php echo $r['thumb'];?>" width="100%" style="margin-bottom: 0;">
-				<div class="alert alert-success text-center" role="alert" style="background-color:rgb(230,0,18); color: white"><?php echo $r['title'];?></div>
+				<div class="alert alert-success text-center" role="alert" style="background-color:#BA0C2F; color: white"><?php echo $r['title'];?></div>
 			</div>
 			</a>
 			<?php $n++;}unset($n); ?>
