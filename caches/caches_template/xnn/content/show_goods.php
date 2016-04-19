@@ -7,6 +7,7 @@
 <link href="<?php echo APP_PATH;?>statics/xnn/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="<?php echo APP_PATH;?>statics/xnn/js/jquery-1.11.0.min.js"></script>
+<script src="<?php echo APP_PATH;?>statics/xnn/js/jquery.qrcode.min.js"></script>
 <!-- Custom Theme files -->
 <link href="<?php echo APP_PATH;?>statics/xnn/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <link rel="stylesheet" href="<?php echo APP_PATH;?>statics/xnn/css/flexslider.css" type="text/css" media="screen" />
@@ -26,6 +27,13 @@
 					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 				});
 			});
+
+        $(function() {
+            var url = "<?php echo $copyfrom;?>";
+            $('#qrcode').qrcode({width:200,height:200,correctLevel:0,text:url});
+            //$("#qrcode").qrcode(url);
+        });
+    
 	</script>
 <!-- //end-smoth-scrolling -->
 </head>
@@ -59,28 +67,21 @@
    </div>	
  </div>
 </div>
-  <div style="height:180px"></div>
-  <div class="container">
-  		<div class="row">
-  			<div class="col-xs-3"></div>
-  			<div class="col-xs-6">
-  			<img src="<?php echo $thumb;?>" class="img-responsive img-rounded" style="width:100%"/>
-  			</div>
-  			 <div class="col-xs-3"></div>
+  <!-- <div style="height:180px"></div> -->
 
-  		</div>
-  		<div class="row">
-  			<div class="col-xs-12" style="border:1px solid grey;height:500px;padding:10px">
-  				<h3 style="text-align:center;"><?php echo $title;?></h3>
-						<p style="text-indent:2em">
-							<?php echo $content;?>
-						</p>
-  			</div>
+		<div class="container-fluid" style="padding-left:0; padding-right:0; margin-top:180px;">
+			<div class="col-xs-2">
+              <div id="qrcode" style="position:fixed"></div>
+			</div>
+			<!-- <div class="row"> -->
+			<!--<h3 style="text-align:center;"><?php echo $title;?></h3>-->
+			<!-- <div class="col-xs-2"></div> -->
+		<div class="col-xs-8"><?php echo $content;?></div>
+		<!-- <div class="col-xs-2"></div> -->
+	<!-- </div> -->
+		</div>
+		<div class="col-xs-2"></div>
 
 
-  		</div>
-
-  </div>
-</div>
 </body>
 </html>
